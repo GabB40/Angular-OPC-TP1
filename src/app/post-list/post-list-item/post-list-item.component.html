@@ -1,0 +1,7 @@
+<li [ngStyle]="{color : colorPost()}">
+  <em class="float-right">{{post.created_at | date :'dd/MM/yyyy, HH:mm'}}</em>
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+  <button class="btn btn-primary mt-2 mr-2" (click)="onLove()">Love it!</button>
+  <button class="btn btn-danger mt-2" (click)="onDontLove()">Don't love it!</button>
+</li>

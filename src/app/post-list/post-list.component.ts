@@ -7,11 +7,7 @@ import { Post } from '../modeles/post';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  @Input() post: Post = {
-    title : 'Mon premier post',
-    content : 'du contenu, bla bla bla... bla bla bla... bla bla bla... bla bla bla...',
-    created_at: new Date()
-  }
+  @Input() posts: Array<Post>
 
   constructor() { }
 
