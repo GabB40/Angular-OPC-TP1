@@ -23,12 +23,13 @@ export class PostListItemComponent implements OnInit {
     console.log('post et nb de loveIt :', this.post.title , this.post.loveIts);
   }
   colorPost(){
-    // let color = this.post.loveIts === 0 ? 'black' : (this.post.loveIts>0 ? 'green': 'red');
-    // return color;
     return this.post.loveIts === 0 ? 'black' : (this.post.loveIts>0 ? 'green': 'red');
   }
   isLoved(){
     return this.post.loveIts > 0 ? true : false;
+  }
+  isDontLoved(){
+    return this.post.loveIts < 0 ? true : false;
   }
 
 }

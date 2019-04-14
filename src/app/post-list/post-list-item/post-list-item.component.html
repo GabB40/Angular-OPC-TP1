@@ -1,7 +1,19 @@
-<li [ngStyle]="{color : colorPost()}">
-  <em class="float-right">{{post.created_at | date :'dd/MM/yyyy, HH:mm'}}</em>
+
+<li [ngStyle]="{'list-style': 'none'}"
+class="list-group-item  list-group-item-secondary"
+[ngClass]="{'list-group-item-success': isLoved(), 'list-group-item-danger': isDontLoved()}">
+  <em class="float-right text-muted">{{post.created_at | date :'dd/MM/yyyy, HH:mm'}}</em>
   <h1>{{post.title}}</h1>
   <p>{{post.content}}</p>
-  <button class="btn btn-primary mt-2 mr-2" (click)="onLove()">Love it!</button>
-  <button class="btn btn-danger mt-2" (click)="onDontLove()">Don't love it!</button>
+  
+  <button class="btn btn-primary mt-2 mr-2" (click)="onLove()">
+    Love it! 
+    <span *ngIf="post.loveIts > 0" class="ml-2">{{post.loveIts}}</span> 
+    <i class="fas fa-heart ml-1"></i>
+  </button>
+  <button class="btn btn-danger mt-2" (click)="onDontLove()">
+    Don't love it!
+    <span *ngIf="post.loveIts < 0" class="ml-2">{{post.loveIts}}</span> 
+    <i class="fas fa-heart-broken ml-1"></i>
+  </button>
 </li>
